@@ -150,7 +150,7 @@ button {
 .cover {
 	height: 500px;
 	background: #fff no-repeat center center;
-	background-image: url('/img/cover.jpg'), linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+	background-image: url('/img/cover.jpg');
 	background-size: cover;
 	position: relative;
 }
@@ -283,6 +283,61 @@ button {
 	margin: 15px auto;
 	padding: 8px 0;
 	min-width: 200px;
+}
+
+
+
+/*------------ WORK STEPS ---------------------*/
+.steps {
+	position: relative;
+	color: #fff;
+	padding: 35px 0 35px;
+}
+
+.steps:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+}
+
+.steps .center {
+	position: relative;
+	z-index: 10;
+}
+
+.steps .steps-title {
+	color: #fff;
+}
+
+.steps .steps-list {
+
+}
+
+.step {
+	display: inline-block;
+	width: 14.1%;
+	vertical-align: top;
+	margin-left: -4px;
+	text-align: center;
+}
+.step:first-child {
+	margin-left: 0;
+}
+
+.step .step-img {
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	border-radius: 50%;
+}
+
+.step .step-text {
+	padding-top: 10px;
+	font-size: 14px;
 }
 
 
