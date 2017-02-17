@@ -3,7 +3,7 @@ body {
 	font-size: 16px;
 	line-height: 20px;
 	color: #212121;
-	min-height: 2000px;
+	min-height: 3000px;
 }
 
 /* RESETs */
@@ -26,6 +26,9 @@ li {
 	list-style: none;
 }
 
+button {
+	outline: none;
+}
 
 /*-------------- COMMON --------------------*/
 .center {
@@ -33,9 +36,6 @@ li {
 	margin: 0 auto;
 }
 
-.section {
-	min-height: 200px;
-}
 .section .section-title {
 	text-align: center;
 	font-family: "OpenSansBold";
@@ -143,7 +143,7 @@ li {
 
 /*------------ COVER ---------------------*/
 .cover {
-	height: 486px;
+	height: 500px;
 	background: #fff no-repeat center center;
 	background-image: url('/img/cover.jpg'), linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
 	background-size: cover;
@@ -276,4 +276,59 @@ li {
 	padding: 8px 0;
 	min-width: 200px;
 }
+
+
+
+/*------------ QUESTIONS ---------------------*/
+.qstns {
+	height: 500px;
+	overflow: hidden;
+	background: #fff url('/img/qstns.jpg') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.qstns:before,
+.qstns:after {
+	content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.qstns:before {
+  background: url('/img/qstns.png') no-repeat;
+}
+.qstns:after {
+	background: rgba(0,0,0,0.5);
+}
+
+.qstns .qstns-content {
+	position: relative;
+	z-index: 10;
+}
+
+.qstns .qstns-title {
+  font-size: 64px;
+  margin-top: 150px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.qstns .qstns-text {
+	font-size: 28px;
+  margin-top: 60px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.qstns .qstns-btn {
+	margin-top: 50px;
+	padding: 15px 60px;
+	border-width: 1px;
+	border-color: #fff;
+}
+
 
