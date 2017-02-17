@@ -287,6 +287,60 @@ button {
 
 
 
+/*------------ FAQ ---------------------*/
+.faq {
+	padding-bottom: 40px;
+}
+
+.faq .faq-title {
+	margin-bottom: 35px;
+}
+
+.faq .faq-list {
+
+}
+
+.faq .faq-item {
+	padding-left: 100px;
+	border-bottom: 2px solid #ccc;
+	position: relative;
+	margin-top: 25px;
+	padding-bottom: 25px;
+}
+
+.faq .faq-item:nth-child(2n) .faq-number {
+	top: -8px;
+}
+.faq .faq-item:last-child {
+	border-bottom: none;
+}
+
+.faq .faq-number {
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-family: "OpenSansBold";
+	color: #ccc;
+  font-size: 42px;
+  border: 5px solid #ccc;
+  border-radius: 50%;
+  width: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.faq .faq-question {
+	font-size: 22px;
+}
+
+.faq .faq-answer {
+ 	margin-top: 12px;
+  color: #333;
+  font-family: "OpenSansItalic";
+}
+
+
+
 /*------------ QUESTIONS ---------------------*/
 .qstns {
 	height: 500px;
