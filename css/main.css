@@ -14,6 +14,7 @@ p, menu {
 
 a {
 	text-decoration: none;
+	cursor: pointer;
 }
 
 ul {
@@ -90,10 +91,11 @@ button {
 }
 
 .header .header-slogan {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 18px;
   font-weight: normal;
-  margin-top: 14px;
+	margin-top: 8px;
+	font-family: "OpenSansBold";
 }
 
 .header .header-phone {
@@ -118,7 +120,7 @@ button {
 
 .menu ul {
 	margin: 0 auto;
-	width: 470px;
+	width: 520px;
 }
 
 .menu li {
@@ -165,7 +167,7 @@ button {
 	background: rgba(0,0,0,0.5);
 }
 
-.cover .form {
+.form {
 	display: inline-block;
 	width: 320px;
 	background: #FEFDFB;
@@ -174,20 +176,20 @@ button {
 	position: relative;
 	z-index: 10;
 	float: right;
-  margin-top: 40px;
+  margin-top: 70px;
 }
-.cover .form-title {
+.form-title {
 	text-align: center;
 	color: #666;
 	font-size: 22px;
 }
-.cover .form-action {
+.form-action {
 	text-align: center;
 	color: #666;
 	font-size: 14px;
   margin-top: 5px;
 }
-.cover .form-input {
+.form-input {
 	display: block;
   width: 100%;
   box-sizing: border-box;
@@ -197,22 +199,22 @@ button {
 	margin-bottom: 15px;
 	color: #313131;
 }
-.cover .form-input:first-child {
+.form-input:first-child {
 	margin-top: 30px;
 }
-.cover .form-btn {
+.form-btn {
   width: 100%;
   margin-top: 20px;
   padding: 10px 0;
   font-size: 18px;
 }
-.cover .form-privacy {
+.form-privacy {
 	color: #333;
 	font-size: 13px;
 	margin-top: 15px;
 	text-align: center;
 }
-.cover .form-privacy:before {
+.form-privacy:before {
 	font-family: 'FontAwesome';
 	content: "\f023";
 }
@@ -292,6 +294,10 @@ button {
 	position: relative;
 	color: #fff;
 	padding: 35px 0 35px;
+  background: #fff no-repeat;
+  background-position: 50% 89%;
+  background-image: url(/img/steps.jpg);
+  background-size: cover;
 }
 
 .steps:before {
@@ -331,9 +337,19 @@ button {
 .step .step-img {
 	width: 100px;
 	height: 100px;
-	background: #fff;
 	border-radius: 50%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
 }
+.step-img1 { background-image: url('/img/steps/s1.jpg'); }
+.step-img2 { background-image: url('/img/steps/s2.jpg'); }
+.step-img3 { background-image: url('/img/steps/s3.jpg'); }
+.step-img4 { background-image: url('/img/steps/s4.jpg'); }
+.step-img5 { background-image: url('/img/steps/s5.jpg'); }
+.step-img6 { background-image: url('/img/steps/s6.jpg'); }
+.step-img7 { background-image: url('/img/steps/s7.png'); }
 
 .step .step-text {
 	padding-top: 10px;
@@ -364,7 +380,10 @@ button {
 }
 
 .faq .faq-item:nth-child(2n) .faq-number {
-	top: -8px;
+	top: 4px;
+}
+.faq .faq-item:nth-child(2n) .faq-number {
+	top: -6px;
 }
 .faq .faq-item:last-child {
 	border-bottom: none;
@@ -376,8 +395,8 @@ button {
 	top: 0;
 	font-family: "OpenSansBold";
 	color: #ccc;
-  font-size: 42px;
-  border: 5px solid #ccc;
+  font-size: 32px;
+  border: 3px solid #ccc;
   border-radius: 50%;
   width: 60px;
   line-height: 60px;
@@ -449,9 +468,16 @@ button {
 }
 
 
+/*-------------------- MAP ---------------------*/
+.map iframe,
+.map img {
+	width: 100%;
+	height: 450px;
+}
+
 /*------------ CONTACTS ---------------------*/
 .cntcts {
-  height: 185px;
+ 	padding: 30px 0 30px;
   background: #ddd linear-gradient(180deg,#ddd,#f5f5f5 50%,#f5f5f5);
   font-family: "OpenSansBold";
   text-align: center;
@@ -459,22 +485,83 @@ button {
 }
 
 .cntcts .cntcts-title {
-  padding-top: 40px;
   font-size: 30px;
   text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
 }
 
 .cntcts .cntcts-phone {
-	margin-top: 30px;
+	margin-top: 22px;
 }
 
 .cntcts .cntcts-address {
 	margin-top: 10px;
 }
 
-/*-------------------- MAP ---------------------*/
-.map iframe {
-	width: 100%;
-	height: 400px;
+.cntcts .cntcts-btn {
+	margin-top: 12px;
+	padding: 7px 20px;
 }
 
+
+/*-------------------- POPUP ---------------------*/
+.popup {
+	position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 1100;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.is-shown {
+	visibility: visible;
+  opacity: 1;
+}
+
+.popup .popup-content {
+	position: absolute;
+	z-index: 10;
+	top: 50%;
+	left: 50%;
+	background: #FEFDFB;
+	width: 360px;
+	min-height: 250px;
+	margin-top: -160px;
+	margin-left: -180px;
+	padding: 15px;
+	box-sizing: border-box;
+	border-radius: 3px;
+}
+
+.popup .popup-close {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  z-index: 20;
+  cursor: pointer;
+  font-family: "Times New Roman", serif;
+  font-size: 36px;
+  line-height: 1em;
+  transition: transform 0.3s;
+}
+.popup .popup-close:hover {
+  transform: rotate(90deg);
+  color: #65b7e9;
+}
+
+.popup .popup-text {
+	margin-top: 40px;
+	line-height: 30px;
+	text-align: center;
+	color: #666;
+	font-size: 22px;
+}
+
+.popup #error.popup-text {
+	color: red;
+}

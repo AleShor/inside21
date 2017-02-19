@@ -1,8 +1,62 @@
 $(document).ready(function(){
 	createPriceList();
 	createFaqList();
+	initAllForms();
 });
 
+
+/*----------------HELPERS----------------------------------------------*/
+function scrollTo(el) {
+	if (!el) return false;
+
+	const $el = $('#' + el);
+
+	if($el.length) $('html, body').animate({
+		scrollTop: $el.offset().top
+	}, 600);
+
+}
+
+function initAllForms() {
+	$('form').submit(function(e) {
+		if (e) e.preventDefault()
+		successPopupOpen();
+	})
+}
+
+/*----------------POPUPS----------------------------------------------*/
+function cllbckPopupOpen() {
+	$('#callbackPopup').addClass('is-shown');
+	$('body').css({'overflow-y': 'hidden'});
+}
+
+function rqstPopupOpen() {
+	$('#requestPopup').addClass('is-shown');
+	$('body').css({'overflow-y': 'hidden'});
+}
+
+function successPopupOpen() {
+	$('.popup').removeClass('is-shown');
+	
+	var $resPopup = $('#resultPopup');
+	$resPopup.addClass('is-shown');
+	$resPopup.find('#success').show();
+	$resPopup.find('#error').hide();
+}
+
+function errorPopupOpen() {
+	$('.popup').removeClass('is-shown');
+
+	var $resPopup = $('#resultPopup');
+	$resPopup.addClass('is-shown');
+	$resPopup.find('#success').hide();
+	$resPopup.find('#error').show();
+}
+
+function popupClose() {
+	$('.popup').removeClass('is-shown');
+	$('body').css({'overflow-y': 'auto'});
+}
 
 
 /*----------------PRICE LIST----------------------------------------------*/
@@ -30,7 +84,7 @@ function createPriceList() {
 						+'<p>от ' + price.cost + ' руб. за км2</p>'
 					+'</div>'
 
-					+'<button class="price-btn btn">'
+					+'<button class="price-btn btn" onClick="rqstPopupOpen()" >'
 						+'Оставить заявку'
 					+'</button>'
 				+'</li>'
@@ -154,7 +208,7 @@ var faqList = [
 
 	{
 		qstn: 'Кто будет непосредственно выполнять ремонт?',
-		answr: 'У нас свой штат строителей. Все рабочие - квалифицированные специалисты',
+		answr: 'У нас свой штат строителей. Все рабочие - квалифицированные специалисты.',
 	},
 ];
 
