@@ -379,11 +379,14 @@ button {
 	padding-bottom: 25px;
 }
 
+.faq .faq-item:nth-child(2n+1) .faq-number {
+	top: -6px;
+}
 .faq .faq-item:nth-child(2n) .faq-number {
 	top: 4px;
 }
-.faq .faq-item:nth-child(2n) .faq-number {
-	top: -6px;
+.faq .faq-item:first-child .faq-number {
+	top: 5px;
 }
 .faq .faq-item:last-child {
 	border-bottom: none;
