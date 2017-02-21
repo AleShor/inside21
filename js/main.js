@@ -18,9 +18,30 @@ function scrollTo(el) {
 }
 
 function initAllForms() {
+
+	$("input[name='phone']").mask('+7 (999) 999-99-99');
+
 	$('form').submit(function(e) {
-		if (e) e.preventDefault()
-		successPopupOpen();
+		if (e) e.preventDefault();
+
+		var $crntform = $(e.target);
+		var data = {
+			name: $crntform.find('input[name="name"]').val(),
+			phone: $crntform.find('input[name="phone"]').val()
+		};
+
+		$.ajax({
+		  type: "POST",
+		  url: '/formdata',
+		  dataType: 'json',
+		  data: data,
+		  success: function() {
+		  	successPopupOpen();	
+		  },
+		  error: function() {
+		  	errorPopupOpen();
+		  },
+		});
 	})
 }
 
@@ -48,6 +69,7 @@ function successPopupOpen() {
 }
 
 function errorPopupOpen() {
+	ga('send', 'event', 'click', 'errorSendForm');
 	$('.popup').removeClass('is-shown');
 
 	var $resPopup = $('#resultPopup');
