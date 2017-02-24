@@ -21,6 +21,8 @@ function initAllForms() {
 
 	$("input[name='phone']").mask('+7 (999) 999-99-99');
 
+	// $('form').attr('action','/php/sendemail.php');
+
 	$('form').submit(function(e) {
 		if (e) e.preventDefault();
 
@@ -32,7 +34,7 @@ function initAllForms() {
 
 		$.ajax({
 		  type: "POST",
-		  url: '/formdata',
+		  url: '/php/sendemail.php',
 		  dataType: 'json',
 		  data: data,
 		  success: function() {
